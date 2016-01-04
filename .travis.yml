@@ -5,3 +5,6 @@ android:
     - tools
     - build-tools-23.0.2
     - android-23
+
+before_script:
+  - chmod 777 ./gradlew
