@@ -7,6 +7,9 @@ android:
 notifications:
   email: false
 
+before_script:
+ - chmod 777 gradlew
+
 before_install:
 
   # for gradle output style
@@ -17,6 +20,5 @@ before_install:
   - uname -a
 
 # Let's try to build...
-before_script:
- - chmod 777 ./gradlew
+
 script: ./gradlew clean build
