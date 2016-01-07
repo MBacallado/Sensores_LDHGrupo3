@@ -2,11 +2,11 @@ language: android
 jdk: oraclejdk8
 android:
   components:
-    - build-tools-23.0.2
-    #- android-23
-env:
-  matrix:
-    - ANDROID_SDKS=android-15 ANDROID_TARGET=android-23
+    - build-tools-23.0.1
+    - android-23
+#env:
+#  matrix:
+#    - ANDROID_SDKS=android-15 ANDROID_TARGET=android-23
 
   #  - sys-img-armeabi-v7a-android-19
 before_script:
@@ -15,5 +15,5 @@ before_script:
   # - emulator -avd test -no-skin -no-audio -no-window &
   # - android-wait-for-emulator
   # - adb shell input keyevent 82 &
-#script:
-#    - ./gradlew connectedAndroid
+script:
+    - ./gradlew build connectedCheck
