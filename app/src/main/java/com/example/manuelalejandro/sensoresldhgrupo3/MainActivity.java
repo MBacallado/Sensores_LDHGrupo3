@@ -18,6 +18,7 @@ public class MainActivity extends AppCompatActivity {
     Button botonAcelerometro;
     Button botonGiroscopio;
     Button botonLuz;
+    Button botonPodometro;
     /**
      * Constructor de la clase Activity,
      * @param savedInstanceState guarda una instancia de la actividad pasada por parametro
@@ -98,6 +99,17 @@ public class MainActivity extends AppCompatActivity {
         });
 
 
+
+        /**
+         * Se declara el boton para el sensor Podometro
+         */
+        botonPodometro = (Button) findViewById(R.id.button7);
+        botonPodometro.setOnClickListener(new Button.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                podometro(v);
+            }
+        });
     }
 
 
@@ -192,6 +204,17 @@ public class MainActivity extends AppCompatActivity {
 
     public void luz(View view) {
         Intent i = new Intent(this, LuzActivity.class);
+        startActivity(i);
+    }
+
+
+    /**
+     * Función que crea el intent con la actividad del sensor Luz y la inicia.
+     * @param view
+     */
+
+    public void podometro(View view) {
+        Intent i = new Intent(this, PodometroActivity.class);
         startActivity(i);
     }
 }
