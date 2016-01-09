@@ -1,4 +1,5 @@
 apply plugin: 'com.android.application'
+apply plugin: 'sonar-runner'
 
 android {
     compileSdkVersion 23
@@ -26,4 +27,14 @@ dependencies {
     compile 'com.android.support:design:23.1.1'
 
     compile 'com.google.android.gms:play-services-appindexing:8.1.0'
+}
+
+sonarRunner {
+    sonarProperties {
+        property "sonar.host.url", "http://localhost:9000"
+        property "sonar.sources", "src"
+        property "sonar.projectName", "SensoresLDHGrupo3"
+        property "sonar.projectVersion", "1.0"
+        property "sonar.projectDescription", "Anadiendo Sonar con Android"
+    }
 }
