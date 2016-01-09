@@ -12,6 +12,7 @@ import android.view.MenuItem;
 import android.widget.Button;
 
 public class MainActivity extends AppCompatActivity {
+    Button botonProximidad;
     Button botonMagnetico;
 
     /**
@@ -24,6 +25,17 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+
+        /**
+         * Se declara boton para el sensor proximidad
+         */
+        botonProximidad = (Button) findViewById(R.id.button);
+        botonProximidad.setOnClickListener(new Button.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                proximidad(v);
+            }
+        });
 
         /**
          * Se declara el boton para el sensor magnetico
@@ -76,6 +88,16 @@ public class MainActivity extends AppCompatActivity {
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+    /**
+     * Función que crea el intent con la actividad del sensor proximidad y la inicia.
+     * Se espera modificar cambios (Probando commits con jira...)
+     * @param view
+     */
+    public void proximidad(View view) {
+        Intent i = new Intent(this, ProximidadActivity.class);
+        startActivity(i);
     }
 
     /**
