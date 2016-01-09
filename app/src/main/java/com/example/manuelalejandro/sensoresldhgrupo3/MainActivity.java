@@ -17,6 +17,7 @@ public class MainActivity extends AppCompatActivity {
     Button botonHumedad;
     Button botonAcelerometro;
     Button botonGiroscopio;
+    Button botonLuz;
     /**
      * Constructor de la clase Activity,
      * @param savedInstanceState guarda una instancia de la actividad pasada por parametro
@@ -82,7 +83,26 @@ public class MainActivity extends AppCompatActivity {
                 giroscopio(v);
             }
         });
+
+
+
+        /**
+         * Se declara el boton para el sensor Luz
+         */
+        botonLuz = (Button) findViewById(R.id.button6);
+        botonLuz.setOnClickListener(new Button.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                luz(v);
+            }
+        });
+
+
     }
+
+
+
+
 
     /**
      * Añade elementos a la barra de acción si está presente
@@ -162,6 +182,16 @@ public class MainActivity extends AppCompatActivity {
 
     public void giroscopio(View view) {
         Intent i = new Intent(this, GiroscopioActivity.class);
+        startActivity(i);
+    }
+
+    /**
+     * Función que crea el intent con la actividad del sensor Giroscopio y la inicia.
+     * @param view
+     */
+
+    public void luz(View view) {
+        Intent i = new Intent(this, LuzActivity.class);
         startActivity(i);
     }
 }
