@@ -36,5 +36,7 @@ sonarRunner {
         property "sonar.projectName", "SensoresLDHGrupo3"
         property "sonar.projectVersion", "1.0"
         property "sonar.projectDescription", "Anadiendo Sonar con Android"
+        property "sonar.profile", "Android Lint"
+        property "sonar.import_unknown_files", true
     }
 }
