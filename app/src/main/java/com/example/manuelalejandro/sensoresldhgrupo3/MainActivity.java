@@ -15,6 +15,7 @@ public class MainActivity extends AppCompatActivity {
     Button botonProximidad;
     Button botonMagnetico;
     Button botonHumedad;
+    Button botonAcelerometro;
     /**
      * Constructor de la clase Activity,
      * @param savedInstanceState guarda una instancia de la actividad pasada por parametro
@@ -56,6 +57,17 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 humedad(v);
+            }
+        });
+
+        /**
+         * Se declara el boton para el sensor acelerometro
+         */
+        botonAcelerometro = (Button) findViewById(R.id.button4);
+        botonAcelerometro.setOnClickListener(new Button.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                acelerometro(v);
             }
         });
     }
@@ -111,8 +123,23 @@ public class MainActivity extends AppCompatActivity {
         startActivity(i);
     }
 
+    /**
+     * Función que crea el intent con la actividad del sensor humedad y la inicia.
+     * @param view
+     */
+
     public void humedad(View view) {
         Intent i = new Intent(this, HumedadActivity.class);
+        startActivity(i);
+    }
+
+    /**
+     * Función que crea el intent con la actividad del sensor Acelerometro y la inicia.
+     * @param view
+     */
+
+    public void acelerometro(View view) {
+        Intent i = new Intent(this, AcelerometroActivity.class);
         startActivity(i);
     }
 }
