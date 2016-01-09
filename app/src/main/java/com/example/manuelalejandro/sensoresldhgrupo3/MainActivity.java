@@ -14,7 +14,7 @@ import android.widget.Button;
 public class MainActivity extends AppCompatActivity {
     Button botonProximidad;
     Button botonMagnetico;
-
+    Button botonHumedad;
     /**
      * Constructor de la clase Activity,
      * @param savedInstanceState guarda una instancia de la actividad pasada por parametro
@@ -48,6 +48,16 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        /**
+         * Se declara el boton para el sensor humedad
+         */
+        botonHumedad = (Button) findViewById(R.id.button3);
+        botonHumedad.setOnClickListener(new Button.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                humedad(v);
+            }
+        });
     }
 
     /**
@@ -98,6 +108,11 @@ public class MainActivity extends AppCompatActivity {
      */
     public void magnometro(View view) {
         Intent i = new Intent(this, MagnometroActivity.class);
+        startActivity(i);
+    }
+
+    public void humedad(View view) {
+        Intent i = new Intent(this, HumedadActivity.class);
         startActivity(i);
     }
 }
