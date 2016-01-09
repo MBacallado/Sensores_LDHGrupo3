@@ -186,7 +186,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     /**
-     * Función que crea el intent con la actividad del sensor Giroscopio y la inicia.
+     * Función que crea el intent con la actividad del sensor Luz y la inicia.
      * @param view
      */
 
