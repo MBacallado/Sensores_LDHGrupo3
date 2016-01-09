@@ -1,5 +1,5 @@
 apply plugin: 'com.android.application'
-apply plugin: 'org.sonarqube'
+//apply plugin: 'org.sonarqube'
 
 android {
     compileSdkVersion 23
@@ -28,7 +28,7 @@ dependencies {
 
     compile 'com.google.android.gms:play-services-appindexing:8.1.0'
 }
-
+/*
 sonarqube {
     sonarProperties {
         property "sonar.host.url", "http://localhost:9000"
@@ -39,4 +39,5 @@ sonarqube {
         property "sonar.profile", "Android Lint"
         property "sonar.import_unknown_files", true
     }
-}
+
+}*/
