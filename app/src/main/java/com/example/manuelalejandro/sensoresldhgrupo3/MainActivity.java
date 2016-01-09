@@ -1,5 +1,6 @@
 package com.example.manuelalejandro.sensoresldhgrupo3;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -8,15 +9,32 @@ import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.Button;
 
 public class MainActivity extends AppCompatActivity {
+    Button botonMagnetico;
 
+    /**
+     * Constructor de la clase Activity,
+     * @param savedInstanceState guarda una instancia de la actividad pasada por parametro
+     */
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+
+        /**
+         * Se declara el boton para el sensor magnetico
+         */
+        botonMagnetico = (Button) findViewById(R.id.button2);
+        botonMagnetico.setOnClickListener(new Button.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                magnometro(v);
+            }
+        });
 
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
@@ -28,6 +46,11 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
+    /**
+     * Añade elementos a la barra de acción si está presente
+     * @param menu
+     * @return true
+     */
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
@@ -35,6 +58,11 @@ public class MainActivity extends AppCompatActivity {
         return true;
     }
 
+    /**
+     * Coge el id , comprueba si está en los ajustes, si está return true, si no, retorna el item seleccionado en las opciones
+     * @param item
+     * @return
+     */
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         // Handle action bar item clicks here. The action bar will
@@ -48,5 +76,14 @@ public class MainActivity extends AppCompatActivity {
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+    /**
+     * Función que crea el intent con la actividad del sensor magnometro y la inicia.
+     * @param view
+     */
+    public void magnometro(View view) {
+        Intent i = new Intent(this, MagnometroActivity.class);
+        startActivity(i);
     }
 }
