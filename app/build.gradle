@@ -1,5 +1,5 @@
 apply plugin: 'com.android.application'
-apply plugin: 'sonar-runner'
+apply plugin: 'org.sonarqube'
 
 android {
     compileSdkVersion 23
@@ -29,7 +29,7 @@ dependencies {
     compile 'com.google.android.gms:play-services-appindexing:8.1.0'
 }
 
-sonarRunner {
+sonarqube {
     sonarProperties {
         property "sonar.host.url", "http://localhost:9000"
         property "sonar.sources", "src"
