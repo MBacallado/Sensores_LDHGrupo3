@@ -16,6 +16,7 @@ public class MainActivity extends AppCompatActivity {
     Button botonMagnetico;
     Button botonHumedad;
     Button botonAcelerometro;
+    Button botonGiroscopio;
     /**
      * Constructor de la clase Activity,
      * @param savedInstanceState guarda una instancia de la actividad pasada por parametro
@@ -68,6 +69,17 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 acelerometro(v);
+            }
+        });
+
+        /**
+         * Se declara el boton para el sensor giroscopio
+         */
+        botonGiroscopio = (Button) findViewById(R.id.button5);
+        botonGiroscopio.setOnClickListener(new Button.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                giroscopio(v);
             }
         });
     }
@@ -140,6 +152,16 @@ public class MainActivity extends AppCompatActivity {
 
     public void acelerometro(View view) {
         Intent i = new Intent(this, AcelerometroActivity.class);
+        startActivity(i);
+    }
+
+    /**
+     * Función que crea el intent con la actividad del sensor Giroscopio y la inicia.
+     * @param view
+     */
+
+    public void giroscopio(View view) {
+        Intent i = new Intent(this, GiroscopioActivity.class);
         startActivity(i);
     }
 }
