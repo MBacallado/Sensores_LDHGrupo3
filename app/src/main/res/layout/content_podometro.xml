@@ -17,7 +17,7 @@
         android:layout_height="50dp"
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:text="Podómetro"
-        android:id="@+id/textView9"
+        android:id="@+id/texto"
         android:textSize="20dp"
         android:textStyle="bold"
         android:textColor="#ffffff"
@@ -29,7 +29,7 @@
 
     <TextView
         android:text=""
-        android:id="@+id/textView8"
+        android:id="@+id/noSensor"
         android:layout_width="300dp"
         android:layout_height="150dp"
         android:layout_marginTop="81dp"

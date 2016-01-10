@@ -48,7 +48,7 @@ public class PodometroActivity extends AppCompatActivity implements SensorEventL
         super.onCreate(savedInstanceState);
         setContentView(R.layout.content_podometro);
         textView = (TextView) findViewById(R.id.texto);
-       // texto = (TextView) findViewById(R.id.noSensor);
+        texto = (TextView) findViewById(R.id.noSensor);
 
         sensorManager = (SensorManager)getSystemService(Context.SENSOR_SERVICE);
         mStepCounterSensor = sensorManager.getDefaultSensor(Sensor.TYPE_STEP_COUNTER);
