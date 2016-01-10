@@ -1,5 +1,27 @@
 apply plugin: 'com.android.application'
-//apply plugin: 'org.sonarqube'
+buildscript {
+    repositories {
+        maven {
+            url "https://plugins.gradle.org/m2/"
+        }
+    }
+    dependencies {
+        classpath "org.sonarqube.gradle:gradle-sonarqube-plugin:1.1"
+    }
+}
+
+apply plugin: "org.sonarqube"
+
+sonarqube {
+    properties  {
+        property "sonar.projectName", "SensoresLDHGrupo3"
+        property "sonar.version", "1.0"
+
+        property "sonar.sources", "./src/main/java"
+        //property "sonar.tests", "./src/test/java"
+        property "sonar.verbose", "false"
+    }
+}
 
 android {
     compileSdkVersion 23
@@ -28,16 +50,3 @@ dependencies {
 
     compile 'com.google.android.gms:play-services-appindexing:8.1.0'
 }
-/*
-sonarqube {
-    sonarProperties {
-        property "sonar.host.url", "http://localhost:9000"
-        property "sonar.sources", "src"
-        property "sonar.projectName", "SensoresLDHGrupo3"
-        property "sonar.projectVersion", "1.0"
-        property "sonar.projectDescription", "Anadiendo Sonar con Android"
-        property "sonar.profile", "Android Lint"
-        property "sonar.import_unknown_files", true
-    }
-
-}*/
