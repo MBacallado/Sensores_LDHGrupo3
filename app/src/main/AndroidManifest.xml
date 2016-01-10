@@ -50,6 +50,10 @@
             android:name=".PulsometroActivity"
             android:label="@string/app_name"
             android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".TermometroActivity"
+            android:label="@string/app_name"
+            android:theme="@style/AppTheme.NoActionBar" />
     </application>
 
 </manifest>

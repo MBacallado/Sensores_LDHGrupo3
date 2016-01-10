@@ -20,6 +20,7 @@ public class MainActivity extends AppCompatActivity {
     Button botonLuz;
     Button botonPodometro;
     Button botonPulsometro;
+    Button botonTermometro;
 
     /**
      * Constructor de la clase Activity,
@@ -117,6 +118,17 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 pulsometro(v);
+            }
+        });
+
+        /**
+         * Se declara boton para el sensor termometro
+         */
+        botonTermometro = (Button) findViewById(R.id.button9);
+        botonTermometro.setOnClickListener(new Button.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                temperatura(v);
             }
         });
     }
@@ -231,6 +243,16 @@ public class MainActivity extends AppCompatActivity {
 
     public void pulsometro(View view) {
         Intent i = new Intent(this, PulsometroActivity.class);
+        startActivity(i);
+    }
+
+    /**
+     * Función que crea el intent con la actividad del sensor termometro y la inicia.
+     * @param view
+     */
+
+    public void temperatura(View view) {
+        Intent i = new Intent(this, TermometroActivity.class);
         startActivity(i);
     }
 }
